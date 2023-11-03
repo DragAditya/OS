@@ -1,0 +1,142 @@
+#!/bin/bash
+#Fibonaii program
+
+a=1
+b=2
+c=0
+i=2
+
+while [ $i -le 20 ] 
+do
+    c=$(($a+$b))
+    echo $c
+    a=$b
+    b=$c
+    i=$(($i + 1))
+done
+
+
+
+
+
+#!/bin/bash
+#factorial
+n=5
+i=0
+fact=1
+
+while [ $i -le $n ]
+do
+    fact=$(($fact * $i))
+    i=$(($i + 1))
+done
+
+echo $fact
+
+
+
+
+
+#!bin/bash
+#PrimeOrNot
+
+num=4
+i=1
+flag=0
+
+while [ $i -le $num ] 
+do
+  if [ $i % $num -eq 0 ]
+    then
+     flag=1
+    fi
+((i++))
+done
+
+if [ flag -eq 0 ]
+    echo "It's not Prime"
+else
+    echo "It's Prime Number"
+fi
+    
+
+
+
+
+#!bin/bash
+#CureentUser
+
+currentuser=$($whoami)
+
+if [ -n $currentuser ] then
+   echo " Hello, $currentuser"
+else
+   echo " Please Register"
+fi
+
+
+
+
+
+#!bin/bash
+#DivisibleBy7
+
+read -p "Enter The Number" num
+
+if [ $(($num % 7)) -eq 0 ] 
+then
+   echo "$num is Divisible By 7"
+else
+   echo "$num is not Divisible By 7"
+fi
+
+
+
+
+
+
+#!/bin/bash
+#ArmStrong
+
+rem=0
+val=0
+num=156
+temp=$num
+
+while [ $((num % 10)) -ne 0 ]
+do
+   rem=$num%10
+   val=$(($val+$(($rem*$rem*$rem))))
+   num=$((num/10))
+done
+
+if [ $num -eq $temp ]
+    echo "It's Armstrong"
+else
+    echo "It's Not Armstrong"
+fi
+
+
+
+
+
+#!bin/bash
+#Palindrom
+
+rem=0
+val=0
+num=333
+temp=$num
+
+while [ $(($num % 10)) -ne 0 ] 
+do
+   rem=$num%10
+   val=$(($val * 10))+$rem
+   num=num/10
+done
+
+if [ $num -eq $temp ]
+   echo "It's Palindrom"
+else
+   echo "It's Not Palindrom"
+fi
